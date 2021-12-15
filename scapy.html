@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>全球排名第二十的工具--scapy</h1><hr noshade>
+    <p>
+        <h3>ARP包</h3>
+        <ul>
+            <li><img src="scrapy.png" alt="not possible"></li>
+            <li>hwtype="硬件类型"</li>
+            <li>ptype="协议类型"</li>
+            <li>hwlen="硬件地址长度（mac）"</li>
+            <li>plen=“软件地址长度（IP）”</li>
+            <li>hwsrc=“源mac”如果是在接收的包中，hwsrc是对方的mac，psrc同理</li>
+            <li>psrc=“源IP”</li>
+            <li>hwdst=“目标mac”</li>
+            <li>pdst=“目标IP”</li>
+        </ul>
+    </p>
+        <hr color="blue" width="600" align="left">
+    <p>
+        <h3>ping包</h3>
+        <ul>
+            <li><img src="2.png" alt="not possible" width="200"><img src="3.png" alt="not possible"></li>
+           <li>发送ping包需要调用两个函数（IP，ICMP）</li>
+           <li><img src="4.png" alt="not possible" width="500"></li>
+           <li></li>
+           <li></li>
+           <li></li>
+           <li></li>
+           <li></li>
+           <li></li>
+           <li></li>
+        </ul>
+    </p>
+        <hr color="blue" width="600" align="left">
+    <p>
+        <h3>SYN包</h3>
+        <ul>
+            <li>TCP协议的SYN请求（三次握手）</li>
+            <li><img src="5.png" alt="not possible" width="180"></li>
+           <li><img src="6.png" alt="not possible" width="180"></li>
+           <li>“flags”表示三次握手中的表示位S为SYN包</li>
+           <li>发送SYN包也要在sr1函数中调用两个函数（IP，TCP）<img src="9.png" alt="not possible" width="350"></li>
+           <li>收到SYN+ACK包后就断开，属于半开放式扫描，不易被发现</li>
+           <li></li>
+           <li></li>
+           <li></li>
+           <li></li>
+           <li></li>
+        </ul>
+    </p>
+            <hr color="blue" width="600" align="left">
+    <p>
+        <h3>sr1()</h3>
+        <ul>
+            <li><img src="1.png" alt="not possible" width="500"></li>
+           <li>ARP函数用来发送和接收包</li>
+           <li>通过sr1（）命令发送ARP包可以看到对方mac地址，是否开机等信息</li>
+           <li></li>
+           <li></li>
+           <li></li>
+           <li></li>
+           <li></li>
+           <li></li>
+           <li></li>
+        </ul>
+    </p>
+</body>
+</html>

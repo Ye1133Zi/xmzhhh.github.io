@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>二三四层发现</h1>
+    <p>
+        <img src="QQ截图20211211200724.png" alt="不可能">
+    </p>
+    <p>
+        <h3>二层发现</h3>
+        <ul>
+            <li>由于二层没有到达网络层所以二层发现没法路由也就是只能发现本地，但也因此速度较快</li>
+            <li>二层发现只能发现目标主机（本地）是否存活</li>
+            <li>二层发现利用了ARP协议</li> 
+            <li>“arping IP地址”用于探测目标主机是否存活，属于主动探测</li>
+            <li>“netdiscover -i 网卡 -r 192.168.1.0/24”（指定地址范围），对网络上每一台主机发送ARP请求，属于主动探测</li>
+            <li>“netdiscover -p” 利用网卡的混杂模式监听网络中的ARP请求，并不主动发包，属于被动探测（速度慢，要等有主机发送ARP请求） </li>
+          
+        </ul>
+    </p>
+    <p>
+        <h3>三层发现</h3>
+        <ul>
+            <li>三层发现一般使用IP，ICMP协议</li>
+            <li>可以经过路由的主机，但很容易被防火墙过滤</li>
+            <li>“ping”命令属于三层发现，可以得知对方主机是否存活和网络是否畅通</li>
+            <li>“traceroute qq.com”探测访问某主机经过了多那些个路由 </li>
+            <li><h4>hping3是一个命令行下使用的TCP/IP数据包组装分析工具，通常web服务器会用来做压力测试使用，也可以用来进行DOS攻击，每次只能扫描一个目标</h4><br>
+            <ul>
+                <li>hping3 -c 1000 -d 120 -S -w 64 -p 80 --flood --rand-suorce qq.com</li>
+                <li>-c 1000 是发送的数据包的数量</li>
+                <li>-d 120 是发送的数据包的大小，单位是字节</li>
+                <li>-S 只发送SYN数据包</li>
+                <li>-w 64 是TCP窗口大小</li>
+                <li>-p 80 目的地80端口</li>
+                <li>--flood 尽可能快的发送数据包</li>
+                <li>--rand-suorce 使用随机性的源头IP地址，这里的伪造IP地址只是在局域中伪造通过路由器后会还原成真实的IP地址</li>
+            </ul></li>
+           <li>"fping"就是ping命令的加强版，可以对一个IP段进行扫描<br>
+        fping -g 192.168.1.0/24 -c(次数) >fping.txt(存到该文件可用cat fping.txt查看)</li>
+          
+        </ul>
+    </p>
+    <p>
+        <h3>四层发现</h3>
+        <ul>
+            <li><h4>namp命令目的是扫描服务器端口及开启的服务</h4></li>
+            <li>nmap 192.168.1.100</li>
+            <li>nmap -p 1-200 192.168.1.100扫描200个端口</li>
+            <li>nmap可以探测出对面的系统“nmap -0 192.168.1.106”</li>
+        </ul>
+    </p>
+</body>
+</html>

