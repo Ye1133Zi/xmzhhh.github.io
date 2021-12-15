@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center><h1>git常用命令&emsp;&emsp;&emsp;<sup>2021，12.13</sup></h1></center>
+    <p>
+        <h2>staus</h2>
+        查看本地库文件夹中是否有文件没被提交<br>
+        <ul>
+            <li> <img src="status1.png" alt="not find" width="500"><br>没有需要提交的文件</li>
+            <hr color="blue" align="left" width="500">
+            <li> <img src="status2.png" alt="wait" width="500"><br>有一个文件（text.txt）没有被add</li>
+        </ul>
+    </p>
+    <hr noshade >
+    <p>
+        <h2>更改后的文件要重新提交，然后重新push到远程仓库</h2>
+        <img src="修改.png" alt="no way" width="500">
+    </p>
+    <hr noshade >
+    <p>
+        <h2>log</h2>
+        <ul>
+            <li>"git log"命令可以让我们查看提交的，显示从最近到最远的日志</li>
+            <li><img src="git log 1.png" alt="not find" width="500"></li>
+            <li>当历史记录过多的时候，查看日志的时候，有分页效果，分屏效果，一页展示不<br>下一页:空格&emsp;上一页:b
+                &emsp;到尾页了，显示END</li>
+            <li>"git log --oneline""git log --pretty=oneline""git reflog"能简洁的展示日志</li>
+        </ul>
+    </p>
+    <hr noshade >
+    <p>
+        <h2>git remote</h2>
+        <ul>
+            <li>get remote用来给远程仓库起别名，方便上传或下载</li>
+            <li>“git remote -v”查看已有别名</li>
+            <li>“git remote add xmzhhh https://github.com/xmzhhh/xmzhhh.github.io.git”命令给远程库起别名</li>
+        
+        </ul>
+    </p>  <hr noshade >
+    <p>
+        <h2>git push</h2>
+        <ul>
+            <li>"git push xmzhhh(远程仓库别名) master（本地仓库分支）"命令将本地库的某分支提交到远程库</li>
+
+        </ul>
+    </p>
+ <hr noshade >
+<p>
+    <h2>git clon</h2>
+    <ul>
+        <li>"git clon  https://github.com/xmzhhh/xmzhhh.github.io.git（远程库地址）"命令将远程库克隆到当前文件夹成为一个本地仓库</li>
+        <li>克隆操作可以帮我们：</li>
+        <li>初始化本地仓库</li>
+        <li>将远程库内容完整的克隆到本地</li>
+        <li>替我们创建远程库的别名</li>
+    </ul>
+</p>
+<hr noshade >
+<p>
+    <h2>git 拉取</h2>
+    <img src="pull.png" alt="not find" width="700">
+    <ul>
+        <li>远程库被修改后要拉取远程库到本地库</li>
+        <li>“git fetch origin master”命令抓取</li>
+       <li>"git checkout origin/master""cat ***"去查看修改的对不对</li>
+       <li>“git checkout master”回到当前目录“git merge origin/master”命令合并</li>
+       
+       <li></li>
+       <li></li><li><img src="pull1.png" alt="not find" width="120">pull实际上是fetch与merge</li>
+       <li>"git pull xmzhhh master"可以一步到位，直接拉取合并</li>
+   
+    </ul>
+</p>
+</body>
+</html>
