@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>笔记006&emsp;&emsp;&emsp;<sub>2021.12.1</sub></h1>
+    <hr color="blue">
+    <h3>表单标签</h3>
+    <p>
+        <ol>
+            <li>"form"是表单标签</li>
+            <li>"input"是表单内容的标签</li>
+            <li>"input"标签的属性
+                <ul>
+                    <li>"type"标签是内容（文本框：text 密码框：passward 提交框：submit 按钮框：button 重置框：reset）</li>
+                    <li>"placeholder"是输入框中的提示字符</li>
+                    <li>"value"提交按钮的提示字符</li>
+                    <li>"action"是信息提交到的地址</li>
+                    <li>"name"是向"action"所指向的地址提交的信息的内容</li>
+                    <li>"method"提交数据的方式（GET POST）默认为get，但是post安全性更高，且传输量更大</li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </li>
+            <li>
+                例如：<br>
+                <form action="http://www.baidu.com" method="post">
+                    用户名：<input type="text" placeholder="请输入用户名" name="用户名"><br>
+                      &emsp;密码：<input type="password" placeholder="请输入密码" name="密码"><br>
+                     &emsp; &emsp; &emsp; <input type="submit" value="登录">&emsp;&emsp;<input type="reset" value="重试">
+                </form>
+            </li>
+        </ol>
+    </p>
+</body>
+</html>

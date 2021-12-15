@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>笔记005&emsp;&emsp;&emsp;<sub>2021.11.22</sub></h1>
+    <hr color="blue" noshade>
+    <h3>table表格的相关属性</h3>
+    <p>
+        <ol>
+            <li>width  宽度(像素或高度)</li>
+            <li>height 高度（像素或高度）</li>
+            <li>border  边框</li>
+            <li>bordercolor  边框颜色</li>
+            <li>bgcolor  背景颜色</li>
+            <li>ailgn  对齐方式（left，right，center ）</li>
+            <li>cellspacing  单元格之间的间距</li>
+            <li>cellpadding  单元格与内容之间的空隙</li>
+            <li><table border="2" width="200" height="70"cellpadding="10">
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>4</td>
+                </tr>
+            </table>
+         </li>
+         
+        </ol>
+    </p>
+    <hr width="600" color="red" align="left" noshade>
+    <p>
+        <h3>tr（行）的属性</h3>
+        <p>
+            <ol>
+                <li>height  高度</li>
+                <li>bgcolor  背景颜色</li>
+                <li>align  文字水平对齐方式</li>
+                <li>valign  文字垂直对齐(top,middle,bottom)</li>
+                <li>
+                    <table border="1" bgcolor="yellow" width="100" height="100">
+                        <tr align="center">
+                            <td>1</td>
+                            <td>2</td>
+                        </tr>
+                        <tr bgcolor="red" valign="top">
+                            <td>3</td>
+                            <td>4</td>
+                        </tr>
+                    </table>
+                </li>
+            </ol>
+        </p>
+    </p>
+    <hr color="red" width="600" noshade align="left">
+        <h3>td（单元格）的属性</h3>
+    <p>
+        <ol>
+            <li>width  宽度</li>
+            <li>height  高度</li>
+            <li>bgcolor  背景颜色</li>
+            <li>laign  文字水平对齐方式</li>
+            <li>valign  文字垂直对齐方式</li>
+            <li><table border="1" bgcolor="yellow" width="100" height="100">
+                <tr>
+                    <td align="center">1</td>
+                    <td bgcolor="red">2</td>
+                </tr>
+                <tr>
+                    <td valign="top" align="center">3</td>
+                    <td >4</td>
+                </tr>
+            </table></li>
+        </ol>
+    </p><hr color="red" width="600" align="left">
+    <p>
+        <h3>表格合并</h3>
+        <ol>
+            <li>colspan="所要合并的单元格的列数"</li>
+            <li>rowspan="所要合并的单元格的行数"</li>
+            <li><table border="1" width="300" height="300">
+                <tr>
+                    <td rowspan="2">rowspan</td>
+                    <td colspan="2">colspan</td>
+                    
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                </tr>
+            </table></li>
+        </ol>
+    </p><br><br><br><br><br><br><br>
+</body>
+</html>
