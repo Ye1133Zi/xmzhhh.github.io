@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .a{
+           background-color: rgb(68, 255, 183);
+       }
+    </style>
+</head>
+<body>
+    <center><h1 style="color: rgb(129, 152, 255);">Wireshark常见协议包分析</h1></center>
+    <hr noshade >
+    <span>
+       <span class="a">ARP协议</span>
+       <span>
+           <ol>
+               <li>ARP协议：地址解析协议</li>
+               <li>简单说就是通过IP地址查找MAC地址</li>
+               <li>Wireshake抓到的ARP包中能看到源MAC，路由等</li>
+               <img src="1.png" alt="error">
+         
+           </ol>
+       </span>
+
+
+    </span>
+
+<hr color="blue" width="600" align="left">
+    <span>
+        <span class="a">ICMP协议</span>
+        <span>
+            <ol>
+                <li>ICMP协议：Internet控制报文协议，属于TCP/IP协议簇的一个子协议</li>
+                <li>用于在IP主机，路由器之间传递控制消息（指网络通不通，主机是否可达，路由是否可用等网络本身的消息）是一个四层协议包</li>
+                <li>“ping”命令走的就是ICMP协议</li>
+                <li>一个request包（Type=8）和一个relay包（Type=0）为一组</li>
+          
+          
+            </ol>
+        </span>
+ 
+ 
+     </span>
+ 
+
+     <hr color="blue" width="600" align="left">
+    <span>
+        <span class="a">TCP协议</span>
+        <span>
+            <ol>
+                <li>TCP协议：传输控制协议</li>
+                <li>是一种面向连接的、可靠的、基于字节流的传输层通信协议。是四层协议</li>
+                <li>“ping”命令走的就是ICMP协议</li>
+                <li>一个request包（Type=8）和一个relay包（Type=0）为一组</li>
+                <li>三次握手图解<img src="2.png" alt="notfind" width="600"></li>
+               
+          
+            </ol>
+        </span>
+ 
+ 
+     </span>
+
+
+
+     <hr color="blue" width="600" align="left">
+     <span>
+         <span class="a">UDP协议</span>
+         <span>
+             <ol>
+                 <li>UDP协议：用户数据报协议</li>
+                 <li>无需建立连接就可以发送封装的IP数据报。是四层协议</li>
+                 <li>不可靠，容易超时</li>
+
+             </ol>
+         </span>
+  
+      </span>
+
+
+
+      <hr color="blue" width="600" align="left">
+      <span>
+          <span class="a">DNS协议</span>
+          <span>
+              <ol>
+                  <li>UDP协议：用户数据报协议</li>
+                  <li>无需建立连接就可以发送封装的IP数据报。是四层协议</li>
+                  <li>不可靠，容易超时</li>
+ 
+              </ol>
+          </span>
+   
+       </span>
+ 
+ 
+       <hr color="blue" width="600" align="left">
+       <span>
+           <span class="a">HTTP协议</span>
+           <span>
+               <ol>
+                   <li>HTTP协议：超文本传输协议</li>
+                   <li>是一个基于请求与响应模式的、无状态的、应用层的协议。</li>
+                   
+  
+               </ol>
+           </span>
+    
+        </span>
+
+
+
+</body>
+</html>
